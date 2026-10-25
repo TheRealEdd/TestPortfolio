@@ -1,73 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Home
+description: "Explore photography and web design by EHR Design & Creation."
+---
 
+<main>
+  <section class="hero" aria-labelledby="hero-heading">
 
-<body>
-  
+    <div class="hero-intro">
+      <p class="eyebrow">EHRocca Design &amp; Creation</p>
+      <h1 id="hero-heading">What are you looking for?</h1>
+    </div>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-intro">
-        <p class="eyebrow">EHRocca Design & Creation</p>
-        <h1 id="hero-heading">What are you looking for?</h1>
-      </div>
+    <div class="service-grid">
 
-      <div class="service-grid">
+      <!-- Photography card -->
+      <a
+        class="service-card"
+        href="{{ '/photography.html' | relative_url }}"
+      >
+        <div class="service-card-image">
+          <img
+            src="{{ '/assets/images/photography-card.jpg' | relative_url }}"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          >
+        </div>
 
-        <!-- Photography card -->
-        <a class="service-card" href="./photography.html">
-          <div class="service-card-image">
-            <img
-              src="./images/photography-card.jpg"
-              alt=""
-              fetchpriority="high"
-              decoding="async"
-            >
-          </div>
+        <div class="service-card-content">
+          <h2>Photography</h2>
 
-          <div class="service-card-content">
-            <h2>Photography</h2>
-            <span class="card-arrow arrow-left" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M19 12H5m7 7-7-7 7-7"></path>
-              </svg>
-            </span>
-          </div>
-        </a>
+          <span class="card-arrow arrow-left" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 12H5m7 7-7-7 7-7"></path>
+            </svg>
+          </span>
+        </div>
+      </a>
 
-        <!-- Web design card -->
-        <a class="service-card" href="./web.html">
-          <div class="service-card-image">
-            <img
-              src="./images/web-design-card.webp"
-              alt=""
-              decoding="async"
-            >
-          </div>
+      <!-- Web design card -->
+      <a
+        class="service-card"
+        href="{{ '/web.html' | relative_url }}"
+      >
+        <div class="service-card-image">
+          <img
+            src="{{ '/assets/images/web-design-card.webp' | relative_url }}"
+            alt=""
+            decoding="async"
+          >
+        </div>
 
-          <div class="service-card-content">
-            <h2>Web design</h2>
-            <span class="card-arrow arrow-right" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M5 12h14m-7-7 7 7-7 7"></path>
-              </svg>
-            </span>
-          </div>
-        </a>
+        <div class="service-card-content">
+          <h2>Web design</h2>
 
-      </div>
+          <span class="card-arrow arrow-right" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h14m-7-7 7 7-7 7"></path>
+            </svg>
+          </span>
+        </div>
+      </a>
 
-      <div class="hero-cta">
-        <a class="button button-primary" href="./contact.html">
-          Get in touch
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h14m-7-7 7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </section>
-  </main>
+    </div>
 
-  
-</body>
-</html>
+    <div class="hero-cta">
+      <a
+        class="button button-primary"
+        href="{{ '/contact.html' | relative_url }}"
+      >
+        Get in touch
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14m-7-7 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+
+  </section>
+</main>
