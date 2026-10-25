@@ -1,0 +1,62 @@
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title | escape }} — {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+
+  <meta
+    name="description"
+    content="{{ page.description | default: site.description | escape }}"
+  >
+
+  <meta name="theme-color" content="#f7f6f2">
+
+  <link
+    rel="icon"
+    href="{{ '/assets/images/ehrlogo.svg' | relative_url }}"
+    type="image/svg+xml"
+  >
+
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/styles.css' | relative_url }}"
+  >
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      let savedTheme = null;
+
+      try {
+        savedTheme = localStorage.getItem('ehr-theme');
+      } catch (error) {
+        // Fall back to the system preference if storage is unavailable.
+      }
+
+      const systemPrefersDark =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      const theme =
+        savedTheme === 'dark' || savedTheme === 'light'
+          ? savedTheme
+          : systemPrefersDark
+            ? 'dark'
+            : 'light';
+
+      root.dataset.theme = theme;
+
+      const themeColor = document.querySelector(
+        'meta[name="theme-color"]'
+      );
+
+      if (themeColor) {
+        themeColor.setAttribute(
+          'content',
+          theme === 'dark' ? '#20211e' : '#f7f6f2'
+        );
+      }
+    })();
+  </script>
+</head>

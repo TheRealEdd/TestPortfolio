@@ -1,0 +1,19 @@
+
+title: "EHR Design & Creation"
+description: "Photography, web design and creative work by EHR Design & Creation."
+
+# Keep this empty when running the site locally.
+# Set it to your repository name when deploying to a GitHub Pages project site.
+baseurl: "https://therealedd.github.io"
+
+# Your GitHub Pages URL, without a trailing slash.
+url: "/TestPortfolio"
+
+# Files and folders Jekyll should not process as pages.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .github
