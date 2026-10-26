@@ -237,16 +237,19 @@ main {
 
 .hero {
   width: min(100%, var(--page-width));
+  min-height: calc(100svh - 88px);
   margin-inline: auto;
-  padding:
-    clamp(64px, 10vw, 132px)
-    var(--page-gutter)
-    var(--section-gap);
+  padding: clamp(24px, 5vh, 56px) var(--page-gutter);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-intro {
-  max-width: 680px;
-  margin: 0 auto clamp(44px, 6vw, 76px);
+  width: 100%;
+  max-width: none;
+  margin: 0 auto clamp(24px, 4vh, 40px);
 
   text-align: center;
 }
@@ -262,9 +265,9 @@ main {
 }
 
 .hero-intro h1 {
-  margin-bottom: 22px;
+  margin: 0;
 
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 1.08;
@@ -286,7 +289,8 @@ main {
 .service-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(16px, 2.5vw, 36px);
+  gap: clamp(16px, 2.5vw, 32px);
+  width: 100%;
 }
 
 .service-card {
@@ -312,7 +316,7 @@ main {
 
 .service-card-image {
   overflow: hidden;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 5 / 3;
   background: var(--color-border);
 }
 
@@ -330,8 +334,8 @@ main {
 
 .service-card-content {
   flex: 1;
-  min-height: 94px;
-  padding: 22px clamp(18px, 2.5vw, 34px);
+  min-height: 76px;
+  padding: 14px clamp(14px, 2vw, 28px);
 
   display: flex;
   align-items: center;
@@ -401,7 +405,7 @@ main {
 .hero-cta {
   display: flex;
   justify-content: center;
-  margin-top: clamp(40px, 6vw, 72px);
+  margin-top: clamp(20px, 3vh, 36px);
 }
 
 .button {
@@ -656,15 +660,16 @@ main {
   }
 
   .hero {
-    padding-top: 68px;
+    min-height: auto;
+    padding-block: 40px;
   }
 
   .hero-intro {
-    margin-bottom: 36px;
+    margin-bottom: 28px;
   }
 
   .hero-intro h1 {
-    font-size: clamp(2.1rem, 8vw, 3.2rem);
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   .service-grid {
@@ -673,11 +678,11 @@ main {
   }
 
   .service-card-image {
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 5 / 3;
   }
 
   .service-card-content {
-    min-height: 82px;
+    min-height: 72px;
   }
 
   .footer-grid {
@@ -695,98 +700,7 @@ main {
 
 
 
-/* ========================================
-   9. Motion accessibility
-======================================== */
-
-@keyframes menu-enter {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-
-/* ========================================
-   Homepage hero — consolidated layout
-======================================== */
-
-:root {
-  --header-height: 88px;
-}
-
-.hero {
-  width: min(100%, var(--page-width));
-  min-height: calc(100svh - var(--header-height));
-  margin-inline: auto;
-  padding: clamp(24px, 5vh, 56px) var(--page-gutter);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero-intro {
-  width: 100%;
-  max-width: none;
-  margin: 0 auto clamp(24px, 4vh, 40px);
-  text-align: center;
-}
-
-.hero-intro .eyebrow {
-  margin-bottom: 12px;
-}
-
-.hero-intro h1 {
-  margin: 0;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 1.08;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(16px, 2.5vw, 32px);
-  width: 100%;
-  padding: 0;
-}
-
-.service-card {
-  min-width: 0;
-}
-
-.service-card-image {
-  aspect-ratio: 5 / 3;
-}
-
-.service-card-content {
-  min-height: 76px;
-  padding: 14px clamp(14px, 2vw, 28px);
-}
-
-.hero-cta {
-  margin-top: clamp(20px, 3vh, 36px);
-}
-
-/* Short desktop and tablet viewports */
+/* Compact desktop viewports */
 @media (min-width: 701px) and (max-height: 760px) {
   .hero {
     padding-block: 20px;
@@ -814,40 +728,30 @@ main {
   }
 }
 
-/* Mobile: comfortable stacked cards */
-@media (max-width: 700px) {
-  :root {
-    --header-height: 76px;
+/* ========================================
+   9. Motion accessibility
+======================================== */
+
+@keyframes menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
   }
 
-  .hero {
-    min-height: auto;
-    padding-block: 40px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .hero-intro {
-    margin-bottom: 28px;
-  }
-
-  .hero-intro h1 {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-
-  .service-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-
-  .service-card-image {
-    aspect-ratio: 5 / 3;
-  }
-
-  .service-card-content {
-    min-height: 72px;
-  }
-
-  .hero-cta {
-    margin-top: 28px;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -882,20 +786,25 @@ main {
   line-height: 1.75;
 }
 
-/* Masonry-like layout, starting with mobile */
-.photography-gallery {
-  columns: 2;
+/* Masonry-like gallery: two columns on mobile */
+.photography-page .photography-gallery {
+  display: block;
+  column-count: 2;
+  column-width: auto;
   column-gap: 12px;
 }
 
-.photography-item {
+.photography-page .photography-item {
+  display: inline-block;
+  width: 100%;
   break-inside: avoid;
+  -webkit-column-break-inside: avoid;
   margin: 0 0 12px;
   overflow: hidden;
   border-radius: var(--card-radius);
 }
 
-.photography-item img {
+.photography-page .photography-item img {
   display: block;
   width: 100%;
   height: auto;
@@ -903,30 +812,30 @@ main {
 }
 
 @media (hover: hover) {
-  .photography-item img:hover {
+  .photography-page .photography-item img:hover {
     transform: scale(1.025);
   }
 }
 
 @media (min-width: 700px) {
-  .photography-gallery {
-    columns: 3;
+  .photography-page .photography-gallery {
+    column-count: 3;
     column-gap: 20px;
   }
 
-  .photography-item {
+  .photography-page .photography-item {
     margin-bottom: 20px;
   }
 }
 
 @media (min-width: 1100px) {
-  .photography-gallery {
-    columns: 4;
+  .photography-page .photography-gallery {
+    column-count: 4;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .photography-item img {
+  .photography-page .photography-item img {
     transition: none;
   }
 }

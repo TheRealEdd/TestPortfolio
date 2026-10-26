@@ -16,7 +16,7 @@ description: "Portrait, business and event photography in Groningen and the surr
   </header>
 
   <section class="photography-gallery" aria-label="Photography portfolio">
-    {% assign photographs = site.photography | sort: "order" %}
+    {% assign photographs = site.data.photography.photographs %}
 
     {% for photo in photographs %}
       <figure class="photography-item">
