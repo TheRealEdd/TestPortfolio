@@ -9,16 +9,6 @@
     circumstances, allowing for creative lighting scenarios such as these.
   featured: false
   order: 2
-- title: Parisian Sunset
-  date: 2016-07-26
-  image: /media/photography/originals/IMG_3306.webp
-  alt: Portrait of a man wearing sunglasses, illuminated from behind by the late
-    evening sunset on a street in Paris.
-  category: Portraits
-  description: Using natural lighting to illuminate his silhouette, my client was
-    captured in a wash of beautiful sunset colours.
-  featured: false
-  order: 4
 - title: Networking Events
   date: 2020-02-06
   image: /media/photography/originals/IMG_2350.webp
@@ -32,3 +22,13 @@
     soon.
   featured: false
   order: 3
+- title: Parisian Sunset
+  date: 2016-07-26
+  image: /media/photography/originals/IMG_3306.webp
+  alt: Portrait of a man wearing sunglasses, illuminated from behind by the late
+    evening sunset on a street in Paris.
+  category: Portraits
+  description: Using natural lighting to illuminate his silhouette, my client was
+    captured in a wash of beautiful sunset colours.
+  featured: false
+  order: 4
