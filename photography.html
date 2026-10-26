@@ -1,0 +1,32 @@
+---
+layout: default
+title: Photography
+description: "Portrait, business and event photography in Groningen and the surrounding area. Professional photography for young professionals, businesses and events by EHR Design & Creation."
+---
+
+<main class="photography-page">
+  <header class="photography-intro">
+    <h1>Photography</h1>
+    <p>
+      I photograph young professionals, businesses and events
+      in and around Groningen. From personal portraits to
+      professional brand imagery and events, my focus is on
+      capturing people and moments naturally.
+    </p>
+  </header>
+
+  <section class="photography-gallery" aria-label="Photography portfolio">
+    {% assign photographs = site.photography | sort: "order" %}
+
+    {% for photo in photographs %}
+      <figure class="photography-item">
+        <img
+          src="{{ photo.image | relative_url }}"
+          alt="{{ photo.alt | escape }}"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
+    {% endfor %}
+  </section>
+</main>
