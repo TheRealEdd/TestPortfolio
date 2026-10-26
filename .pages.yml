@@ -1,13 +1,18 @@
 media:
-  input: media
-  output: /media
+  - name: originals
+    label: Photography originals
+    input: media/photography/originals
+    output: /media/photography/originals
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp, tif, tiff]
 
 content:
   - name: photography
-    label: Photography
-    type: collection
-    path: _photography
-    filename: "{primary}.md"
+    label: Photography gallery
+    type: file
+    path: _data/photography.yml
+    format: yaml
+    list: true
     fields:
       - name: title
         label: Title
@@ -19,12 +24,14 @@ content:
         type: date
 
       - name: image
-        label: Image
+        label: Original image
         type: image
         required: true
+        options:
+          media: originals
 
       - name: alt
-        label: Image description
+        label: Image description (alt text)
         type: string
         required: true
 
