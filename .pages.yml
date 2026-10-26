@@ -12,41 +12,44 @@ content:
     type: file
     path: _data/photography.yml
     format: yaml
-    list: true
     fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
+      - name: photographs
+        label: Photographs
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
 
-      - name: date
-        label: Date
-        type: date
+          - name: date
+            label: Date
+            type: date
 
-      - name: image
-        label: Original image
-        type: image
-        required: true
-        options:
-          media: originals
+          - name: image
+            label: Original image
+            type: image
+            required: true
+            options:
+              media: originals
 
-      - name: alt
-        label: Image description (alt text)
-        type: string
-        required: true
+          - name: alt
+            label: Image description
+            type: string
+            required: true
 
-      - name: category
-        label: Category
-        type: string
+          - name: category
+            label: Category
+            type: string
 
-      - name: description
-        label: Description
-        type: rich-text
+          - name: description
+            label: Description
+            type: rich-text
 
-      - name: featured
-        label: Featured
-        type: boolean
-
-      - name: order
-        label: Display order
-        type: number
+          - name: featured
+            label: Featured
+            type: boolean
